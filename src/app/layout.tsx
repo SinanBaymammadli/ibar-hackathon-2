@@ -16,7 +16,7 @@ import { makeStyles, useTheme, Theme, createStyles } from "@material-ui/core/sty
 import { NavItem } from "./components/nav_item";
 import { useDispatch } from "react-redux";
 import { ROUTES } from "./routes";
-import { authRedux } from "./modules/auth/ui/state/state";
+import { authReduxActions } from "./modules/auth/ui/state/state";
 import { useHistory } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -87,8 +87,8 @@ export const Layout: React.FC<IProps> = (props: IProps) => {
   };
 
   const handleLogout = async () => {
-    await dispatch(authRedux.actions.logout());
-    dispatch(authRedux.actions.checkAuth());
+    await dispatch(authReduxActions.logout());
+    dispatch(authReduxActions.checkAuth());
   };
 
   const drawer = (

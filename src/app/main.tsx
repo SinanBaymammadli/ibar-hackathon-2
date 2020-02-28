@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IAppReduxState } from "./redux/store";
 import { IAsyncData } from "./core/models";
 import { LoadingScreen } from "./components/loading_screen";
-import { authRedux } from "./modules/auth/ui/state/state";
+import { authReduxActions } from "./modules/auth/ui/state/state";
 import { isLoading } from "./core/redux";
 import { LoginPage } from "./modules/auth/ui/pages/login_page";
 import { UserMainPage } from "./modules/users/ui/pages/main_page";
@@ -16,7 +16,7 @@ export const Main: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(authRedux.actions.checkAuth());
+    dispatch(authReduxActions.checkAuth());
   }, [dispatch]);
 
   const isLoggedInBranch = useSelector<IAppReduxState, IAsyncData<boolean>>((state) => state.auth.isLoggedIn);
