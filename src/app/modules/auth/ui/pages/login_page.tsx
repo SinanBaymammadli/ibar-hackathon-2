@@ -28,7 +28,7 @@ export const LoginPage: React.FC = () => {
       <Box m={2}>
         <Center>
           <Typography variant="h4" gutterBottom>
-            Sistem
+            Ibar Hackathon
           </Typography>
         </Center>
       </Box>
