@@ -8,25 +8,21 @@ enum EProfileActionType {
   CHANGE_PASSWORD = "CHANGE_PASSWORD",
 }
 
+interface IProfileActionCreators {
+  changePassword: (form: IPasswordForm) => IAsyncReduxAction<void>;
+}
+
+export const profileReduxActions: IProfileActionCreators = {
+  changePassword: (form) => ({
+    type: EProfileActionType.CHANGE_PASSWORD,
+    payload: ProfileRepoImpl.changePassword(form),
+  }),
+};
+
 export interface IProfileReduxState {
   changePassword: IAsyncData<void>;
 }
 
-const changePassword = (form: IPasswordForm): IAsyncReduxAction<void> => ({
-  type: EProfileActionType.CHANGE_PASSWORD,
-  payload: ProfileRepoImpl.changePassword(form),
-});
-const changePasswordReducer = asyncItemReducerGenerator<void>(EProfileActionType.CHANGE_PASSWORD);
-
-export const profileRedux = {
-  actions: {
-    changePassword,
-  },
-  reducers: {
-    changePassword: changePasswordReducer,
-  },
-};
-
 export const ProfileReducers = combineReducers<IProfileReduxState>({
-  ...profileRedux.reducers,
+  changePassword: asyncItemReducerGenerator<void>(EProfileActionType.CHANGE_PASSWORD),
 });

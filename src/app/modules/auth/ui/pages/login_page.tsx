@@ -8,7 +8,7 @@ import { isPending } from "../../../../core/redux";
 import { useDispatch, useSelector } from "react-redux";
 import { IAppReduxState } from "../../../../redux/store";
 import { IAsyncData } from "../../../../core/models";
-import { authRedux } from "../state/state";
+import { authReduxActions } from "../state/state";
 import { Center } from "../../../../components/center";
 import { FormButton } from "../../../../components/form_button";
 
@@ -19,8 +19,8 @@ export const LoginPage: React.FC = () => {
   const loading = isPending(loginBranch);
 
   async function onLogin(form: ILoginForm) {
-    await dispatch(authRedux.actions.login(form));
-    dispatch(authRedux.actions.checkAuth());
+    await dispatch(authReduxActions.login(form));
+    dispatch(authReduxActions.checkAuth());
   }
 
   return (

@@ -6,7 +6,7 @@ import { UserForm } from "../components/form";
 import { ROUTES } from "../../../../routes";
 import { IAsyncData } from "../../../../core/models";
 import { IUserForm, IUser, userEditFormValidation } from "../../data/entities";
-import { userRedux } from "../state/state";
+import { userReduxActions } from "../state/state";
 import { Routing } from "../../../../core/routing";
 
 export const UserEditPage: React.FC = () => {
@@ -19,11 +19,11 @@ export const UserEditPage: React.FC = () => {
   const editUserBranch = useSelector<IAppReduxState, IAsyncData<void>>((state) => state.user.edit);
 
   useEffect(() => {
-    dispatch(userRedux.actions.getDetail(id));
+    dispatch(userReduxActions.getDetail(id));
   }, [dispatch, id]);
 
   const onSubmit = async (form: IUserForm): Promise<void> => {
-    await dispatch(userRedux.actions.edit(id, form));
+    await dispatch(userReduxActions.edit(id, form));
     history.push(Routing.generateDetailRoute(ROUTES.users, id));
   };
 

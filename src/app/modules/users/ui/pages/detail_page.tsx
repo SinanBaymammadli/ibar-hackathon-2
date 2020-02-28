@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IAppReduxState } from "../../../../redux/store";
 import { useRouteMatch, useHistory } from "react-router-dom";
 import { IAsyncData } from "../../../../core/models";
-import { userRedux } from "../state/state";
+import { userReduxActions } from "../state/state";
 import { IUser } from "../../data/entities";
 import { DetailTable } from "../../../../components/detail_table";
 import { ROUTES } from "../../../../routes";
@@ -16,12 +16,12 @@ export const UserDetailPage: React.FC = () => {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(userRedux.actions.getDetail(id));
+    dispatch(userReduxActions.getDetail(id));
   }, [dispatch, id]);
   const userDetailBranch = useSelector<IAppReduxState, IAsyncData<IUser>>((state) => state.user.details);
 
   const deleteUser = async (id: string): Promise<void> => {
-    await dispatch(userRedux.actions.delete(id));
+    await dispatch(userReduxActions.delete(id));
     history.push(ROUTES.users);
   };
   const deleteBranch = useSelector<IAppReduxState, IAsyncData<void>>((state) => state.user.delete);
