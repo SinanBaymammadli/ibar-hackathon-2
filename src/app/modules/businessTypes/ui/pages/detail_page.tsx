@@ -8,6 +8,7 @@ import { ROUTES } from "../../../../routes";
 import { Table, TableBody, TableRow, TableCell, Grid } from "@material-ui/core";
 import { IBusinessType } from "../../data/entities";
 import { businessTypeReduxActions } from "../state/state";
+import { taxTypeTranslation, vatTypeTranslation } from "../../data/utils";
 
 export const BusinessTypeDetailPage: React.FC = () => {
   const match = useRouteMatch<{ id: string }>();
@@ -27,7 +28,6 @@ export const BusinessTypeDetailPage: React.FC = () => {
     history.push(ROUTES.businessTypes);
   };
   const deleteBranch = useSelector<IAppReduxState, IAsyncData<void>>((state) => state.businessType.delete);
-
   return (
     <Grid container justify="center">
       <Grid item md={8} lg={6}>
@@ -40,13 +40,41 @@ export const BusinessTypeDetailPage: React.FC = () => {
           <Table size="medium" className="detail-table">
             <TableBody>
               <TableRow>
-                <TableCell>Ad</TableCell>
+                <TableCell>Name</TableCell>
                 <TableCell>{BusinessTypeDetailBranch.data?.name}</TableCell>
               </TableRow>
 
               <TableRow>
-                <TableCell>Email</TableCell>
-                <TableCell>{BusinessTypeDetailBranch.data?.email}</TableCell>
+                <TableCell>Worker count</TableCell>
+                <TableCell>{BusinessTypeDetailBranch.data?.workerCount}</TableCell>
+              </TableRow>
+
+              <TableRow>
+                <TableCell>Money limit</TableCell>
+                <TableCell>{BusinessTypeDetailBranch.data?.moneyLimit}</TableCell>
+              </TableRow>
+
+              <TableRow>
+                <TableCell>Category</TableCell>
+                <TableCell>{BusinessTypeDetailBranch.data?.category}</TableCell>
+              </TableRow>
+
+              <TableRow>
+                <TableCell>Tax type</TableCell>
+                <TableCell>
+                  {BusinessTypeDetailBranch.data?.taxType !== undefined
+                    ? taxTypeTranslation(BusinessTypeDetailBranch.data?.taxType)
+                    : ""}
+                </TableCell>
+              </TableRow>
+
+              <TableRow>
+                <TableCell>Vat</TableCell>
+                <TableCell>
+                  {BusinessTypeDetailBranch.data?.vatType !== undefined
+                    ? vatTypeTranslation(BusinessTypeDetailBranch.data?.vatType)
+                    : ""}
+                </TableCell>
               </TableRow>
             </TableBody>
           </Table>

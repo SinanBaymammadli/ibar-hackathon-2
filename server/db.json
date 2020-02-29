@@ -1,79 +1,76 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "email": "user@mail.com",
-      "password": "$2a$10$HM2yX5.sM8N6.GYQzBLY5.UMFTYO2ScwqnEV8GWxIhuU8zN3rQNBy",
-      "name": "Qazanfar Aghayev",
-      "phone": "0503703375",
-      "companyName": "RISK",
-      "filePath": "test",
-      "createdDate": "25.02.2020",
-      "updatedDate": "25.02.2020",
-      "version": 1
-    }
-  ],
-  "templates": [
-    {
-      "id": 1,
-      "name": "test"
-    },
-    {
-      "id": 2,
-      "name": "test"
-    },
-    {
-      "id": 3,
-      "name": "test"
-    },
-    {
-      "id": 4,
-      "name": "test"
-    },
-    {
-      "id": 5,
-      "name": "test"
-    },
-    {
-      "id": 6,
-      "name": "test"
-    },
-    {
-      "name": "Test",
-      "file": {},
-      "id": 9
-    },
-    {
-      "name": "Test",
-      "file": {},
-      "id": 10
-    }
-  ],
-  "formulas": [
-    {
-      "id": 1,
-      "name": "test"
-    },
-    {
-      "id": 2,
-      "name": "test"
-    },
-    {
-      "id": 3,
-      "name": "test"
-    }
-  ],
-  "offers": [
-    {
-      "minCashFlow": 0,
-      "minRating": 0,
-      "id": 1
-    },
-    {
-      "minCashFlow": 0,
-      "minRating": 0,
-      "activityCategoryId": "8",
-      "id": 2
-    }
-  ]
+    "businessTypes": [
+        {
+            "id": 1,
+            "name": "Qazanfar Aghayev",
+            "workerCount": 20,
+            "moneyLimit": 200,
+            "category": 0,
+            "taxType": 0,
+            "vatType": 0
+        }
+    ],
+    "templates": [
+        {
+            "id": 1,
+            "name": "test"
+        },
+        {
+            "id": 2,
+            "name": "test"
+        },
+        {
+            "id": 3,
+            "name": "test"
+        },
+        {
+            "id": 4,
+            "name": "test"
+        },
+        {
+            "id": 5,
+            "name": "test"
+        },
+        {
+            "id": 6,
+            "name": "test"
+        },
+        {
+            "name": "Test",
+            "file": {},
+            "id": 9
+        },
+        {
+            "name": "Test",
+            "file": {},
+            "id": 10
+        }
+    ],
+    "formulas": [
+        {
+            "id": 1,
+            "name": "test"
+        },
+        {
+            "id": 2,
+            "name": "test"
+        },
+        {
+            "id": 3,
+            "name": "test"
+        }
+    ],
+    "offers": [
+        {
+            "minCashFlow": 0,
+            "minRating": 0,
+            "id": 1
+        },
+        {
+            "minCashFlow": 0,
+            "minRating": 0,
+            "activityCategoryId": "8",
+            "id": 2
+        }
+    ]
 }
