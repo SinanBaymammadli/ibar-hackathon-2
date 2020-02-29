@@ -15,7 +15,7 @@ export const TemplateCreatePage: React.FC = () => {
 
   const onSubmit = async (values: ITemplateForm): Promise<void> => {
     const template = ((await dispatch(templateReduxActions.create(values))) as unknown) as IId;
-    history.push(`${ROUTES.templates}/${template.id}/${templateRoutes.keyWords}`);
+    history.push(`${ROUTES.templates}/${templateRoutes.keyWords}/${template.id}`);
   };
 
   const createTemplateBranch = useSelector<IAppReduxState, IAsyncData<any>>((state) => state.template.create);

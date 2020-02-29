@@ -20,12 +20,12 @@ export const TemplateMainPage: React.FC = () => {
         <TemplateCreatePage />
       </Route>
 
-      <Route path={Routing.generateEditRoute(ROUTES.templates)}>
-        <TemplateEditPage />
+      <Route path={`${ROUTES.templates}/${templateRoutes.keyWords}/:id`} exact>
+        <KeyWordsPage />
       </Route>
 
-      <Route path={`${ROUTES.templates}/:id/${templateRoutes.keyWords}`}>
-        <KeyWordsPage />
+      <Route path={Routing.generateEditRoute(ROUTES.templates)}>
+        <TemplateEditPage />
       </Route>
 
       <Route path={Routing.generateDetailRoute(ROUTES.templates)}>

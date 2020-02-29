@@ -2,7 +2,7 @@ import * as Yup from "yup";
 
 interface IKeyWordBase {
   name: string;
-  formulaId: string;
+  value: string;
 }
 
 interface IKeyWordsBase {
@@ -17,7 +17,7 @@ export interface IKeyWordsForm extends IKeyWordsBase {}
 
 const keyWordsCommonValidation = {
   name: Yup.string().required(),
-  formulaId: Yup.string().required(),
+  value: Yup.string().required(),
 };
 
 export const keyWordsFormValidation = Yup.object<IKeyWordsForm>({
@@ -28,19 +28,19 @@ export const keyWordsEditFormValidation = Yup.object<IKeyWordsForm>({
   keywords: Yup.array(Yup.object(keyWordsCommonValidation)),
 });
 
-export const KeyWordsFromJson = (json: any): IKeyWords => {
+export const keyWordsFromJson = (json: any): IKeyWords => {
   const e: IKeyWords = {
     id: json.id?.toString(),
     keywords: json.keywords.map((j: any) => ({
       name: j.name,
-      formulaId: j.formulaId,
+      value: j.value,
     })),
   };
 
   return e;
 };
 
-export const KeyWordsToJson = (form: IKeyWordsForm) => {
+export const keyWordsToJson = (form: IKeyWordsForm) => {
   return {
     keywords: form.keywords,
   };

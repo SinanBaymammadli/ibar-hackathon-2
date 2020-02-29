@@ -45,7 +45,7 @@ export function generateCrudRepoFactory<T, TForm>(
             "Content-Type": hasFile ? "multipart/form-data" : "application/json",
           },
         });
-        return { id: res.data?.id ?? "1" };
+        return res.data;
       } catch (error) {
         const failure: Failure = {
           message: error.message ?? "Unhandled failure",
