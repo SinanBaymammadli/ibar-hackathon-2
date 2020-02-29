@@ -6,12 +6,14 @@ import { IAuthenticationReduxState, AuthenticationReducers } from "../modules/au
 import { UserReducers, IUserReduxState } from "../modules/users/ui/state/state";
 import { IProfileReduxState, ProfileReducers } from "../modules/profile/ui/state/state";
 import { ITemplateReduxState, TemplateReducers } from "../modules/templates/ui/state/state";
+import { businessTypeReducers, IBusinessTypeReduxState } from "../modules/businessTypes/ui/state/state";
 
 export interface IAppReduxState {
   auth: IAuthenticationReduxState;
   user: IUserReduxState;
   profile: IProfileReduxState;
   template: ITemplateReduxState;
+  businessType: IBusinessTypeReduxState;
 }
 
 export function getRootReducer(): Reducer<IAppReduxState> {
@@ -20,6 +22,7 @@ export function getRootReducer(): Reducer<IAppReduxState> {
     user: UserReducers,
     profile: ProfileReducers,
     template: TemplateReducers,
+    businessType: businessTypeReducers,
   };
 
   return combineReducers<IAppReduxState>(reducersList);
