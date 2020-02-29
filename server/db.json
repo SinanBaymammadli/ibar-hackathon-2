@@ -1,76 +1,94 @@
 {
-    "businessTypes": [
-        {
-            "id": 1,
-            "name": "Qazanfar Aghayev",
-            "workerCount": 20,
-            "moneyLimit": 200,
-            "category": 0,
-            "taxType": 0,
-            "vatType": 0
-        }
-    ],
-    "templates": [
-        {
-            "id": 1,
-            "name": "test"
-        },
-        {
-            "id": 2,
-            "name": "test"
-        },
-        {
-            "id": 3,
-            "name": "test"
-        },
-        {
-            "id": 4,
-            "name": "test"
-        },
-        {
-            "id": 5,
-            "name": "test"
-        },
-        {
-            "id": 6,
-            "name": "test"
-        },
-        {
-            "name": "Test",
-            "file": {},
-            "id": 9
-        },
-        {
-            "name": "Test",
-            "file": {},
-            "id": 10
-        }
-    ],
-    "formulas": [
-        {
-            "id": 1,
-            "name": "test"
-        },
-        {
-            "id": 2,
-            "name": "test"
-        },
-        {
-            "id": 3,
-            "name": "test"
-        }
-    ],
-    "offers": [
-        {
-            "minCashFlow": 0,
-            "minRating": 0,
-            "id": 1
-        },
-        {
-            "minCashFlow": 0,
-            "minRating": 0,
-            "activityCategoryId": "8",
-            "id": 2
-        }
-    ]
+  "businessTypes": [
+    {
+      "id": 1,
+      "name": "Qazanfar Aghayev",
+      "workerCount": 20,
+      "moneyLimit": 200,
+      "category": 0,
+      "taxType": 0,
+      "vatType": 0
+    },
+    {
+      "workerCount": 12,
+      "moneyLimit": 322,
+      "category": "7",
+      "name": "testsete",
+      "taxType": 1,
+      "vatType": 1,
+      "id": 2
+    },
+    {
+      "workerCount": 0,
+      "moneyLimit": 0,
+      "category": "8",
+      "name": "testset",
+      "taxType": 0,
+      "vatType": 0,
+      "id": 3
+    }
+  ],
+  "templates": [
+    {
+      "id": 1,
+      "name": "test"
+    },
+    {
+      "id": 2,
+      "name": "test"
+    },
+    {
+      "id": 3,
+      "name": "test"
+    },
+    {
+      "id": 4,
+      "name": "test"
+    },
+    {
+      "id": 5,
+      "name": "test"
+    },
+    {
+      "id": 6,
+      "name": "test"
+    },
+    {
+      "name": "Test",
+      "file": {},
+      "id": 9
+    },
+    {
+      "name": "Test",
+      "file": {},
+      "id": 10
+    }
+  ],
+  "formulas": [
+    {
+      "id": 1,
+      "name": "test"
+    },
+    {
+      "id": 2,
+      "name": "test"
+    },
+    {
+      "id": 3,
+      "name": "test"
+    }
+  ],
+  "offers": [
+    {
+      "minCashFlow": 0,
+      "minRating": 0,
+      "id": 1
+    },
+    {
+      "minCashFlow": 0,
+      "minRating": 0,
+      "activityCategoryId": "8",
+      "id": 2
+    }
+  ]
 }

@@ -1,4 +1,5 @@
 import * as Yup from "yup";
+import { EActivityCategory } from "../../offers/data/entities";
 
 export enum ETaxType {
   SimplifiedTax,
@@ -8,7 +9,7 @@ export enum ETaxType {
 export interface IBusinessTypeBase {
   workerCount: number;
   moneyLimit: number;
-  category: string;
+  category: EActivityCategory;
   name: string;
   taxType: ETaxType;
   vatType: boolean;
@@ -24,7 +25,7 @@ const businessTypeCommonValidation = {
   name: Yup.string().required(),
   workerCount: Yup.number().required(),
   moneyLimit: Yup.number().required(),
-  category: Yup.string().required(),
+  category: Yup.mixed<EActivityCategory>().required(),
   taxType: Yup.mixed<ETaxType>().required(),
   vatType: Yup.boolean().required(),
 };
@@ -42,7 +43,7 @@ export const businessTypeFromJson = (json: any): IBusinessType => {
     id: json.id,
     workerCount: json.workerCount,
     moneyLimit: json.moneyLimit,
-    category: json.category?.toString(),
+    category: json.category,
     name: json.name?.toString(),
     taxType: json.taxType,
     vatType: Boolean(json.vatType),
@@ -55,9 +56,9 @@ export const businessTypeToJson = (form: IBusinessTypeForm) => {
   return {
     workerCount: form.workerCount,
     moneyLimit: form.moneyLimit,
-    category: form.category?.toString(),
+    category: Number(form.category),
     name: form.name?.toString(),
-    taxType: form.taxType,
+    taxType: Number(form.taxType),
     vatType: form.vatType ? 1 : 0,
   };
 };

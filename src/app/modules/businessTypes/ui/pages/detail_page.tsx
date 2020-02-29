@@ -9,6 +9,7 @@ import { Table, TableBody, TableRow, TableCell, Grid } from "@material-ui/core";
 import { IBusinessType } from "../../data/entities";
 import { businessTypeReduxActions } from "../state/state";
 import { taxTypeTranslation, vatTypeTranslation } from "../../data/utils";
+import { EActivityCategory } from "../../../offers/data/entities";
 
 export const BusinessTypeDetailPage: React.FC = () => {
   const match = useRouteMatch<{ id: string }>();
@@ -56,7 +57,11 @@ export const BusinessTypeDetailPage: React.FC = () => {
 
               <TableRow>
                 <TableCell>Category</TableCell>
-                <TableCell>{BusinessTypeDetailBranch.data?.category}</TableCell>
+                <TableCell>
+                  {BusinessTypeDetailBranch.data?.category !== undefined
+                    ? EActivityCategory[BusinessTypeDetailBranch.data?.category]
+                    : ""}
+                </TableCell>
               </TableRow>
 
               <TableRow>
