@@ -43,7 +43,7 @@ export interface ICRUDRepo<T, TForm, TDetailParams = {}> {
   getList: (searchQuery?: string) => Promise<T[]>;
   getDetails: (id: string) => Promise<T>;
   create: (form: TForm) => Promise<IId>;
-  createBulk: (form: TForm) => Promise<void>;
+  // createBulk: (form: TForm) => Promise<void>;
   delete: (id: string) => Promise<void>;
   edit: (id: string, form: TForm) => Promise<void>;
 }

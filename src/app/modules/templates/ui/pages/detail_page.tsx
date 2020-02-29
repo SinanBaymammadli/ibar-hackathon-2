@@ -42,10 +42,10 @@ export const TemplateDetailPage: React.FC = () => {
                 <TableCell>{templateDetailBranch.data?.name}</TableCell>
               </TableRow>
 
-              <TableRow>
+              {/* <TableRow>
                 <TableCell>Email</TableCell>
                 <TableCell>{templateDetailBranch.data?.email}</TableCell>
-              </TableRow>
+              </TableRow> */}
             </TableBody>
           </Table>
         </DetailTable>

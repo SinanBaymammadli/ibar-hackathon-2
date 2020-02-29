@@ -6,6 +6,7 @@ import { templateFormValidation, ITemplateForm } from "../../data/entities";
 import { FormButton } from "../../../../components/form_button";
 import { Form } from "../../../../components/form";
 import { Grid } from "@material-ui/core";
+import { FileInput } from "../../../../components/file_input";
 
 interface IProps extends IFormProps<ITemplateForm> {}
 
@@ -20,16 +21,15 @@ export const TemplateForm: React.FC<IProps> = (props: IProps) => {
           {...props}
           initialValues={{
             name: "",
-            email: "",
-            password: "",
+            file: undefined,
           }}
           validationSchema={templateFormValidation}
         >
-          {() => (
+          {({ setFieldValue }) => (
             <>
               <TextInput label="Name" name="name" />
-              <TextInput label="Email" name="email" type="email" />
-              <TextInput label="Password" name="password" type="password" />
+
+              <FileInput label="Image" name="file" setFieldValue={setFieldValue} />
 
               <FormButton label={submitTitle} loading={loading} />
             </>
