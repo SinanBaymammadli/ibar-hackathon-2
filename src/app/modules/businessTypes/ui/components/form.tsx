@@ -31,6 +31,8 @@ export const BusinessTypeForm: React.FC<IProps> = (props: IProps) => {
               <TextInput label="Email" name="email" type="email" />
               <TextInput label="Password" name="password" type="password" />
 
+              {/* <CheckboxInput label="Active" name="isActive" /> */}
+
               <FormButton label={submitTitle} loading={loading} />
             </>
           )}
