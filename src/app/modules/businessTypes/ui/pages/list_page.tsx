@@ -8,6 +8,7 @@ import { ListTable } from "../../../../components/list_table";
 import { CreateButton } from "../../../../components/create_button";
 import { businessTypeReduxActions } from "../state/state";
 import { IBusinessType } from "../../data/entities";
+import { taxTypeTranslation, vatTypeTranslation } from "../../data/utils";
 
 export const BusinessTypeListPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -37,11 +38,15 @@ export const BusinessTypeListPage: React.FC = () => {
         renderHeader={() => (
           <>
             <TableCell>Name</TableCell>
+            <TableCell>Tax Type</TableCell>
+            <TableCell>Vat</TableCell>
           </>
         )}
         renderRow={(businessType) => (
           <>
             <TableCell>{businessType.name}</TableCell>
+            <TableCell>{taxTypeTranslation(businessType.taxType)}</TableCell>
+            <TableCell>{vatTypeTranslation(businessType.vatType)}</TableCell>
           </>
         )}
       />

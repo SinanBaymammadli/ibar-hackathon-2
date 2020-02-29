@@ -5,7 +5,12 @@ import { isPending } from "../../../../core/redux";
 import { FormButton } from "../../../../components/form_button";
 import { Form } from "../../../../components/form";
 import { Grid } from "@material-ui/core";
-import { IBusinessTypeForm, businessTypeFormValidation } from "../../data/entities";
+import { IBusinessTypeForm, businessTypeFormValidation, ETaxType } from "../../data/entities";
+import { SelectInput } from "../../../../components/select_input";
+import { taxTypeTranslation } from "../../data/utils";
+import { enumToSelectOptions, ISelectEntity } from "../../../../core/utils";
+import { CheckboxInput } from "../../../../components/checkbox_input";
+import { EActivityCategory } from "../../../offers/data/entities";
 
 interface IProps extends IFormProps<IBusinessTypeForm> {}
 
@@ -20,18 +25,37 @@ export const BusinessTypeForm: React.FC<IProps> = (props: IProps) => {
           {...props}
           initialValues={{
             name: "",
-            email: "",
-            password: "",
+            workerCount: 0,
+            moneyLimit: 0,
+            category: EActivityCategory.Accomadation,
+            taxType: ETaxType.SimplifiedTax,
+            vatType: false,
           }}
           validationSchema={businessTypeFormValidation}
         >
-          {() => (
+          {({ values }) => (
             <>
               <TextInput label="Name" name="name" />
-              <TextInput label="Email" name="email" type="email" />
-              <TextInput label="Password" name="password" type="password" />
+              <TextInput label="Worker count" name="workerCount" type="number" />
+              <TextInput label="Money limit" name="moneyLimit" type="number" />
 
-              {/* <CheckboxInput label="Active" name="isActive" /> */}
+              <SelectInput<ISelectEntity>
+                value={values.category}
+                options={enumToSelectOptions(EActivityCategory)}
+                name="category"
+                label="Category"
+                renderLabel={(a) => a.label}
+              />
+
+              <SelectInput<ISelectEntity>
+                value={values.taxType}
+                options={enumToSelectOptions(ETaxType)}
+                name="taxType"
+                label="Tax type"
+                renderLabel={(a) => taxTypeTranslation(a.id == "0" ? ETaxType.IncomeTax : ETaxType.SimplifiedTax)}
+              />
+
+              <CheckboxInput label="Vat Includes" name="vatType" />
 
               <FormButton label={submitTitle} loading={loading} />
             </>
