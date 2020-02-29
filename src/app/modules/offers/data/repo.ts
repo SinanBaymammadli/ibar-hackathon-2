@@ -5,7 +5,7 @@ import { generateCrudRepoFactory } from "../../../core/crud";
 
 interface IOfferRepo extends ICRUDRepo<IOffer, IOfferForm> {}
 
-const URL = "offers";
+const URL = "SpecialOffers";
 
 const OfferRepoImplFactory = (apiClient: ApiClient): IOfferRepo => {
   const r: IOfferRepo = {

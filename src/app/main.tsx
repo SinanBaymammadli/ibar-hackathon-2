@@ -58,7 +58,7 @@ export const Main: React.FC = () => {
             </Route>
 
             <Route path="*">
-              <Redirect to={ROUTES.users} />
+              <Redirect to={ROUTES.templates} />
             </Route>
           </Switch>
         </Layout>

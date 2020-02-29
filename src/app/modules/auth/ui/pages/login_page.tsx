@@ -37,7 +37,7 @@ export const LoginPage: React.FC = () => {
           <ErrorPanel branch={loginBranch} />
           <Formik<ILoginForm>
             initialValues={{
-              email: "",
+              username: "",
               password: "",
             }}
             validationSchema={loginFormValidation}
@@ -45,7 +45,7 @@ export const LoginPage: React.FC = () => {
           >
             {() => (
               <Form>
-                <TextInput label="Email" name="email" type="email" />
+                <TextInput label="Username" name="username" />
 
                 <TextInput label="Password" name="password" type="password" />
 

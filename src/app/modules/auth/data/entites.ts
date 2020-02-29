@@ -1,13 +1,11 @@
 import * as Yup from "yup";
 
 export interface ILoginForm {
-  email: string;
+  username: string;
   password: string;
 }
 
 export const loginFormValidation = Yup.object({
-  email: Yup.string()
-    .email()
-    .required(),
+  username: Yup.string().required(),
   password: Yup.string().required(),
 });

@@ -52,7 +52,7 @@ export const BusinessTypeDetailPage: React.FC = () => {
 
               <TableRow>
                 <TableCell>Money limit</TableCell>
-                <TableCell>{BusinessTypeDetailBranch.data?.moneyLimit}</TableCell>
+                <TableCell>{BusinessTypeDetailBranch.data?.moneyLimit} AZN</TableCell>
               </TableRow>
 
               <TableRow>

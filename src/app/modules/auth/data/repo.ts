@@ -28,7 +28,7 @@ const AuthRepoImplFactory = (apiClient: ApiClient, localDatasource: Storage): IA
     },
     login: async (loginForm: ILoginForm) => {
       try {
-        const res = await apiClient.post("/login", loginForm);
+        const res = await apiClient.post("/Account/Login", loginForm);
         const token = res.data["token"];
         localDatasource.setItem(AUTH_TOKEN, token);
       } catch (error) {

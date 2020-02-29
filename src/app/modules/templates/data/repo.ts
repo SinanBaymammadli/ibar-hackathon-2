@@ -5,7 +5,7 @@ import { generateCrudRepoFactory } from "../../../core/crud";
 
 interface ITemplateRepo extends ICRUDRepo<ITemplate, ITemplateForm> {}
 
-const URL = "templates";
+const URL = "TaxReportTemplates";
 
 const TemplateRepoImplFactory = (apiClient: ApiClient): ITemplateRepo => {
   const r: ITemplateRepo = {

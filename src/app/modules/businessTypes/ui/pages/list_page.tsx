@@ -38,6 +38,8 @@ export const BusinessTypeListPage: React.FC = () => {
         renderHeader={() => (
           <>
             <TableCell>Name</TableCell>
+            <TableCell>Money limit</TableCell>
+            <TableCell>Worker count</TableCell>
             <TableCell>Tax Type</TableCell>
             <TableCell>Vat</TableCell>
           </>
@@ -45,6 +47,8 @@ export const BusinessTypeListPage: React.FC = () => {
         renderRow={(businessType) => (
           <>
             <TableCell>{businessType.name}</TableCell>
+            <TableCell>{businessType.moneyLimit} AZN</TableCell>
+            <TableCell>{businessType.workerCount}</TableCell>
             <TableCell>{taxTypeTranslation(businessType.taxType)}</TableCell>
             <TableCell>{vatTypeTranslation(businessType.vatType)}</TableCell>
           </>
