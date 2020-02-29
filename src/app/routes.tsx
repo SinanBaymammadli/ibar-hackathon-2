@@ -4,4 +4,5 @@ export const ROUTES = {
   profile: "/profile",
   templates: "/templates",
   formulas: "/formulas",
+  businessTypes: "/businessTypes",
 };

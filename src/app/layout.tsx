@@ -98,6 +98,7 @@ export const Layout: React.FC<IProps> = (props: IProps) => {
       <List disablePadding>
         <NavItem to={ROUTES.users} text="Users" icon={<AppsIcon />} onClick={handleClose} />
         <NavItem to={ROUTES.templates} text="Templates" icon={<AppsIcon />} onClick={handleClose} />
+        <NavItem to={ROUTES.businessTypes} text="Business Types" icon={<AppsIcon />} onClick={handleClose} />
       </List>
     </div>
   );

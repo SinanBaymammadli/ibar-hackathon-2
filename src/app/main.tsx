@@ -13,6 +13,7 @@ import { UserMainPage } from "./modules/users/ui/pages/main_page";
 import { ProfileMainPage } from "./modules/profile/ui/pages/main_page";
 import { TemplateMainPage } from "./modules/templates/ui/pages/main_page";
 import { FormulaMainPage } from "./modules/formulas/ui/pages/main_page";
+import { BusinessTypesMainPage } from "./modules/businessTypes/ui/pages/main_page";
 
 export const Main: React.FC = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,10 @@ export const Main: React.FC = () => {
 
             <Route path={ROUTES.formulas}>
               <FormulaMainPage />
+            </Route>
+
+            <Route path={ROUTES.businessTypes}>
+              <BusinessTypesMainPage />
             </Route>
 
             <Route path="*">

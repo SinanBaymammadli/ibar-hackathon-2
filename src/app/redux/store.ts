@@ -7,6 +7,7 @@ import { UserReducers, IUserReduxState } from "../modules/users/ui/state/state";
 import { IProfileReduxState, ProfileReducers } from "../modules/profile/ui/state/state";
 import { ITemplateReduxState, TemplateReducers } from "../modules/templates/ui/state/state";
 import { IFormulaReduxState, FormulaReducers } from "../modules/formulas/ui/state/state";
+import { businessTypeReducers, IBusinessTypeReduxState } from "../modules/businessTypes/ui/state/state";
 
 export interface IAppReduxState {
   auth: IAuthenticationReduxState;
@@ -14,6 +15,7 @@ export interface IAppReduxState {
   profile: IProfileReduxState;
   template: ITemplateReduxState;
   formula: IFormulaReduxState;
+  businessType: IBusinessTypeReduxState;
 }
 
 export function getRootReducer(): Reducer<IAppReduxState> {
@@ -23,6 +25,7 @@ export function getRootReducer(): Reducer<IAppReduxState> {
     profile: ProfileReducers,
     template: TemplateReducers,
     formula: FormulaReducers,
+    businessType: businessTypeReducers,
   };
 
   return combineReducers<IAppReduxState>(reducersList);
