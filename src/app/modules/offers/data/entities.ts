@@ -1,7 +1,33 @@
 import * as Yup from "yup";
 
+export enum EActivityCategory {
+  Agriculture,
+  MiningIndustry,
+  ProcessingIndustry,
+  PowerSupply,
+  WaterSupply,
+  Construction,
+  WholeSaleAndRetailtTrade,
+  Transport,
+  Accomadation,
+  ICT,
+  AccountingAndInsurance,
+  RealEstate,
+  ScientificActivities,
+  AdministrativeSupportservices,
+  PublicAdminstration,
+  Education,
+  ProvisionOfHealth,
+  EntertaimentAndArt,
+  OtherProvideAreas,
+  HouseHoldActivities,
+  ImmunityRightOrganizations,
+}
+
 interface IOfferBase {
-  name: string;
+  minCashFlow: number;
+  minRating: number;
+  activityCategoryId: EActivityCategory;
 }
 
 export interface IOffer extends IOfferBase {
@@ -11,7 +37,9 @@ export interface IOffer extends IOfferBase {
 export interface IOfferForm extends IOfferBase {}
 
 const offerCommonValidation = {
-  name: Yup.string().required(),
+  minCashFlow: Yup.number().required(),
+  minRating: Yup.number().required(),
+  activityCategoryId: Yup.mixed<EActivityCategory>().required(),
 };
 
 export const offerFormValidation = Yup.object<IOfferForm>({
@@ -25,7 +53,9 @@ export const offerEditFormValidation = Yup.object<IOfferForm>({
 export const offerFromJson = (json: any): IOffer => {
   const e: IOffer = {
     id: json.id?.toString(),
-    name: json.name?.toString(),
+    minCashFlow: json.minCashFlow,
+    minRating: json.minRating,
+    activityCategoryId: json.activityCategoryId,
   };
 
   return e;
@@ -33,6 +63,8 @@ export const offerFromJson = (json: any): IOffer => {
 
 export const offerToJson = (form: IOfferForm) => {
   return {
-    name: form.name.toString(),
+    minCashFlow: form.minCashFlow,
+    minRating: form.minRating,
+    activityCategoryId: form.activityCategoryId.toString(),
   };
 };

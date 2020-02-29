@@ -38,8 +38,8 @@ export const OfferDetailPage: React.FC = () => {
           <Table size="medium" className="detail-table">
             <TableBody>
               <TableRow>
-                <TableCell>Ad</TableCell>
-                <TableCell>{offerDetailBranch.data?.name}</TableCell>
+                <TableCell>minCashFlow</TableCell>
+                <TableCell>{offerDetailBranch.data?.minCashFlow}</TableCell>
               </TableRow>
             </TableBody>
           </Table>

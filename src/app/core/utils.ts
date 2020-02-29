@@ -37,3 +37,16 @@ export function generateImage(json: any): IImage {
 export function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+export interface ISelectEntity {
+  id: string;
+  label: string;
+}
+
+export function enumToSelectOptions(e: Record<any, any>): ISelectEntity[] {
+  const keys = Object.keys(e);
+  return keys.slice(0, keys.length / 2).map((v: string) => ({
+    id: v,
+    label: e[v],
+  }));
+}

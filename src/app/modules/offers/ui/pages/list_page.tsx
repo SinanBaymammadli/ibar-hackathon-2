@@ -34,12 +34,12 @@ export const OfferListPage: React.FC = () => {
         deleteBranch={deleteBranch}
         renderHeader={() => (
           <>
-            <TableCell>Name</TableCell>
+            <TableCell>minCashFlow</TableCell>
           </>
         )}
         renderRow={(offer) => (
           <>
-            <TableCell>{offer.name}</TableCell>
+            <TableCell>{offer.minCashFlow}</TableCell>
           </>
         )}
       />
