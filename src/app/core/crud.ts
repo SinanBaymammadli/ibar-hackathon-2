@@ -54,14 +54,10 @@ export function generateCrudRepoFactory<T, TForm>(
       }
     },
     edit: async (id, form) => {
-      const json = {
-        ...toJson(form),
-        _method: "PUT",
-      };
-      const data = hasFile ? objectToFormData(json, { indices: true }) : json;
+      const data = hasFile ? objectToFormData(toJson(form), { indices: true }) : toJson(form);
 
       try {
-        await apiClient.post(`/${url}/${id}`, data, {
+        await apiClient.put(`/${url}/${id}`, data, {
           headers: {
             "Content-Type": hasFile ? "multipart/form-data" : "application/json",
           },

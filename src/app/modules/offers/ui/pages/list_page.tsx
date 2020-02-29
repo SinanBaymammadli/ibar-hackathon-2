@@ -5,7 +5,7 @@ import TableCell from "@material-ui/core/TableCell";
 import { ROUTES } from "../../../../routes";
 import { IAsyncData } from "../../../../core/models";
 import { offerReduxActions } from "../state/state";
-import { IOffer } from "../../data/entities";
+import { IOffer, EActivityCategory } from "../../data/entities";
 import { ListTable } from "../../../../components/list_table";
 import { CreateButton } from "../../../../components/create_button";
 
@@ -34,12 +34,16 @@ export const OfferListPage: React.FC = () => {
         deleteBranch={deleteBranch}
         renderHeader={() => (
           <>
-            <TableCell>minCashFlow</TableCell>
+            <TableCell>Min cash flow</TableCell>
+            <TableCell>Min rating</TableCell>
+            <TableCell>Category</TableCell>
           </>
         )}
         renderRow={(offer) => (
           <>
-            <TableCell>{offer.minCashFlow}</TableCell>
+            <TableCell>{offer.minCashFlow} AZN</TableCell>
+            <TableCell>{offer.minRating}</TableCell>
+            <TableCell>{EActivityCategory[offer.activityCategoryId]}</TableCell>
           </>
         )}
       />

@@ -67,13 +67,20 @@
     {
       "minCashFlow": 0,
       "minRating": 0,
+      "activityCategoryId": "9",
       "id": 1
     },
     {
       "minCashFlow": 0,
       "minRating": 0,
-      "activityCategoryId": "8",
+      "activityCategoryId": "6",
       "id": 2
+    },
+    {
+      "minCashFlow": 0,
+      "minRating": 0,
+      "activityCategoryId": 8,
+      "id": 3
     }
   ]
 }

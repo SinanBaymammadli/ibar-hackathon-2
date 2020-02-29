@@ -4,7 +4,7 @@ import { IAppReduxState } from "../../../../redux/store";
 import { useRouteMatch, useHistory } from "react-router-dom";
 import { IAsyncData } from "../../../../core/models";
 import { offerReduxActions } from "../state/state";
-import { IOffer } from "../../data/entities";
+import { IOffer, EActivityCategory } from "../../data/entities";
 import { DetailTable } from "../../../../components/detail_table";
 import { ROUTES } from "../../../../routes";
 import { Table, TableBody, TableRow, TableCell, Grid } from "@material-ui/core";
@@ -38,8 +38,18 @@ export const OfferDetailPage: React.FC = () => {
           <Table size="medium" className="detail-table">
             <TableBody>
               <TableRow>
-                <TableCell>minCashFlow</TableCell>
-                <TableCell>{offerDetailBranch.data?.minCashFlow}</TableCell>
+                <TableCell>Min cash flow</TableCell>
+                <TableCell>{offerDetailBranch.data?.minCashFlow} AZN</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Min rating</TableCell>
+                <TableCell>{offerDetailBranch.data?.minRating}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Category</TableCell>
+                <TableCell>
+                  {offerDetailBranch.data && EActivityCategory[offerDetailBranch.data.activityCategoryId]}
+                </TableCell>
               </TableRow>
             </TableBody>
           </Table>

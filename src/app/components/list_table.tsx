@@ -35,7 +35,7 @@ export function ListTable<T extends { id: string }>({
   onDelete,
   deleteBranch,
   renderSummary,
-  canEdit,
+  canEdit = true,
 }: IProps<T>) {
   const history = useHistory();
   const isDeletePending = Boolean(deleteBranch && isPending(deleteBranch));

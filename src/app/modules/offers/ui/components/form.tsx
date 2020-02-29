@@ -8,6 +8,7 @@ import { Form } from "../../../../components/form";
 import { Grid } from "@material-ui/core";
 import { SelectInput } from "../../../../components/select_input";
 import { ISelectEntity, enumToSelectOptions } from "../../../../core/utils";
+import { FileInput } from "../../../../components/file_input";
 
 interface IProps extends IFormProps<IOfferForm> {}
 
@@ -24,12 +25,14 @@ export const OfferForm: React.FC<IProps> = (props: IProps) => {
             minCashFlow: 0,
             minRating: 0,
             activityCategoryId: EActivityCategory.Accomadation,
+            file: undefined,
           }}
           validationSchema={offerFormValidation}
         >
-          {({ values }) => (
+          {({ values, setFieldValue }) => (
             <>
               <TextInput label="minCashFlow" name="minCashFlow" />
+
               <TextInput label="minRating" name="minRating" />
 
               <SelectInput<ISelectEntity>
@@ -39,6 +42,8 @@ export const OfferForm: React.FC<IProps> = (props: IProps) => {
                 label="activityCategoryId"
                 renderLabel={(a) => a.label}
               />
+
+              <FileInput label="Image" name="file" setFieldValue={setFieldValue} />
 
               <FormButton label={submitTitle} loading={loading} />
             </>
