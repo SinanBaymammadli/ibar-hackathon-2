@@ -99,6 +99,7 @@ export const Layout: React.FC<IProps> = (props: IProps) => {
         <NavItem to={ROUTES.users} text="Users" icon={<AppsIcon />} onClick={handleClose} />
         <NavItem to={ROUTES.templates} text="Templates" icon={<AppsIcon />} onClick={handleClose} />
         <NavItem to={ROUTES.businessTypes} text="Business Types" icon={<AppsIcon />} onClick={handleClose} />
+        <NavItem to={ROUTES.offers} text="Special Offers" icon={<AppsIcon />} onClick={handleClose} />
       </List>
     </div>
   );
