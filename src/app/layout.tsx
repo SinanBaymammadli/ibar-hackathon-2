@@ -96,7 +96,8 @@ export const Layout: React.FC<IProps> = (props: IProps) => {
       <div className={classes.toolbar}></div>
       <Divider />
       <List disablePadding>
-        <NavItem to={ROUTES.users} text="Products" icon={<AppsIcon />} onClick={handleClose} />
+        <NavItem to={ROUTES.users} text="Users" icon={<AppsIcon />} onClick={handleClose} />
+        <NavItem to={ROUTES.templates} text="Templates" icon={<AppsIcon />} onClick={handleClose} />
       </List>
     </div>
   );

@@ -11,6 +11,7 @@ import { isLoading } from "./core/redux";
 import { LoginPage } from "./modules/auth/ui/pages/login_page";
 import { UserMainPage } from "./modules/users/ui/pages/main_page";
 import { ProfileMainPage } from "./modules/profile/ui/pages/main_page";
+import { TemplateMainPage } from "./modules/templates/ui/pages/main_page";
 
 export const Main: React.FC = () => {
   const dispatch = useDispatch();
@@ -35,6 +36,10 @@ export const Main: React.FC = () => {
 
             <Route path={ROUTES.profile}>
               <ProfileMainPage />
+            </Route>
+
+            <Route path={ROUTES.templates}>
+              <TemplateMainPage />
             </Route>
 
             <Route path="*">
