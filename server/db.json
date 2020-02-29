@@ -12,5 +12,55 @@
       "updatedDate": "25.02.2020",
       "version": 1
     }
+  ],
+  "templates": [
+    {
+      "id": 1,
+      "name": "test"
+    },
+    {
+      "id": 2,
+      "name": "test"
+    },
+    {
+      "id": 3,
+      "name": "test"
+    },
+    {
+      "id": 4,
+      "name": "test"
+    },
+    {
+      "id": 5,
+      "name": "test"
+    },
+    {
+      "id": 6,
+      "name": "test"
+    },
+    {
+      "name": "Test",
+      "file": {},
+      "id": 9
+    },
+    {
+      "name": "Test",
+      "file": {},
+      "id": 10
+    }
+  ],
+  "formulas": [
+    {
+      "id": 1,
+      "name": "test"
+    },
+    {
+      "id": 2,
+      "name": "test"
+    },
+    {
+      "id": 3,
+      "name": "test"
+    }
   ]
 }

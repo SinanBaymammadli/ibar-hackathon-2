@@ -33,3 +33,7 @@ export function generateImage(json: any): IImage {
     height: json.file?.height,
   };
 }
+
+export function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

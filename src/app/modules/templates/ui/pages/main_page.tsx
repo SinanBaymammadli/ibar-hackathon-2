@@ -6,6 +6,8 @@ import { TemplateEditPage } from "./edit_page";
 import { ROUTES } from "../../../../routes";
 import { Routing } from "../../../../core/routing";
 import { TemplateDetailPage } from "./detail_page";
+import { templateRoutes } from "../routes";
+import { KeyWordsPage } from "./key_words_page";
 
 export const TemplateMainPage: React.FC = () => {
   return (
@@ -20,6 +22,10 @@ export const TemplateMainPage: React.FC = () => {
 
       <Route path={Routing.generateEditRoute(ROUTES.templates)}>
         <TemplateEditPage />
+      </Route>
+
+      <Route path={`${ROUTES.templates}/:id/${templateRoutes.keyWords}`}>
+        <KeyWordsPage />
       </Route>
 
       <Route path={Routing.generateDetailRoute(ROUTES.templates)}>

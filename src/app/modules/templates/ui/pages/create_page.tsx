@@ -4,17 +4,18 @@ import { IAppReduxState } from "../../../../redux/store";
 import { useHistory } from "react-router-dom";
 import { ROUTES } from "../../../../routes";
 import { TemplateForm } from "../components/form";
-import { IAsyncData } from "../../../../core/models";
+import { IAsyncData, IId } from "../../../../core/models";
 import { templateReduxActions } from "../state/state";
 import { ITemplateForm } from "../../data/entities";
+import { templateRoutes } from "../routes";
 
 export const TemplateCreatePage: React.FC = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
   const onSubmit = async (values: ITemplateForm): Promise<void> => {
-    await dispatch(templateReduxActions.create(values));
-    history.push(ROUTES.templates);
+    const template = ((await dispatch(templateReduxActions.create(values))) as unknown) as IId;
+    history.push(`${ROUTES.templates}/${template.id}/${templateRoutes.keyWords}`);
   };
 
   const createTemplateBranch = useSelector<IAppReduxState, IAsyncData<any>>((state) => state.template.create);
