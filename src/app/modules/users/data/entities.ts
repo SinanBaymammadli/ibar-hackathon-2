@@ -1,12 +1,13 @@
 import * as Yup from "yup";
-import { IBasicEntity, basicEntityFromJson } from "../../../core/models";
 
 interface IUserBase {
   name: string;
   email: string;
 }
 
-export interface IUser extends IUserBase, IBasicEntity {}
+export interface IUser extends IUserBase {
+  id: string;
+}
 
 export interface IUserForm extends IUserBase {
   password?: string;
@@ -32,9 +33,9 @@ export const userEditFormValidation = Yup.object<IUserForm>({
 
 export const userFromJson = (json: any): IUser => {
   const e: IUser = {
-    ...basicEntityFromJson(json),
-    name: json.name.toString(),
-    email: json.email.toString(),
+    id: json.id?.toString(),
+    name: json.name?.toString(),
+    email: json.email?.toString(),
   };
 
   return e;

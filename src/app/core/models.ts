@@ -88,24 +88,6 @@ export interface IId {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function exhaustiveCheck(param: never): void {}
 
-export interface IBasicEntity {
-  id: string;
-  createdDate: Date;
-  updatedDate: Date;
-  version: number;
-}
-
-export const basicEntityFromJson = (json: any): IBasicEntity => {
-  const e: IBasicEntity = {
-    id: json.id.toString(),
-    createdDate: new Date(json.createdDate.toString()),
-    updatedDate: new Date(json.updatedDate.toString()),
-    version: parseInt(json.version, 10),
-  };
-
-  return e;
-};
-
 export interface IRange<T> {
   from: Maybe<T>;
   to: Maybe<T>;
