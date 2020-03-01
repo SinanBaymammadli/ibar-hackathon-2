@@ -12,16 +12,23 @@ import DateFnsUtils from "@date-io/date-fns";
 
 import * as serviceWorker from "./serviceWorker";
 import "./index.scss";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core";
+
+const theme = createMuiTheme({
+  palette: {},
+});
 
 ReactDOM.render(
-  <MuiPickersUtilsProvider utils={DateFnsUtils}>
-    <Provider store={store}>
-      <BrowserRouter>
-        <CssBaseline />
-        <Main />
-      </BrowserRouter>
-    </Provider>
-  </MuiPickersUtilsProvider>,
+  <ThemeProvider theme={theme}>
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <CssBaseline />
+          <Main />
+        </BrowserRouter>
+      </Provider>
+    </MuiPickersUtilsProvider>
+  </ThemeProvider>,
   document.getElementById("root"),
 );
 
