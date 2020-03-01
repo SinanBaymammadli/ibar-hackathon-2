@@ -9,7 +9,14 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
-import AppsIcon from "@material-ui/icons/Apps";
+import Apps from "@material-ui/icons/Apps";
+import People from "@material-ui/icons/People";
+import AccountBalance from "@material-ui/icons/AccountBalance";
+import Bookmarks from "@material-ui/icons/Bookmarks";
+import Business from "@material-ui/icons/Business";
+import LocalOffer from "@material-ui/icons/LocalOffer";
+import Payment from "@material-ui/icons/Payment";
+
 import Menu from "@material-ui/core/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { makeStyles, useTheme, Theme, createStyles } from "@material-ui/core/styles";
@@ -96,10 +103,13 @@ export const Layout: React.FC<IProps> = (props: IProps) => {
       <div className={classes.toolbar}></div>
       <Divider />
       <List disablePadding>
-        {/* <NavItem to={ROUTES.users} text="Users" icon={<AppsIcon />} onClick={handleClose} /> */}
-        <NavItem to={ROUTES.templates} text="Templates" icon={<AppsIcon />} onClick={handleClose} />
-        <NavItem to={ROUTES.businessTypes} text="Business Types" icon={<AppsIcon />} onClick={handleClose} />
-        <NavItem to={ROUTES.offers} text="Special Offers" icon={<AppsIcon />} onClick={handleClose} />
+        <NavItem to="/user" text="User management" icon={<People />} onClick={handleClose} />
+        <NavItem to="/role" text="Role managment" icon={<Apps />} onClick={handleClose} />
+        <NavItem to="/accounts" text="Client accounts" icon={<AccountBalance />} onClick={handleClose} />
+        <NavItem to={ROUTES.templates} text="Templates" icon={<Bookmarks />} onClick={handleClose} />
+        <NavItem to={ROUTES.businessTypes} text="Business Types" icon={<Business />} onClick={handleClose} />
+        <NavItem to={ROUTES.offers} text="Special Offers" icon={<LocalOffer />} onClick={handleClose} />
+        <NavItem to="/payments" text="Transactions" icon={<Payment />} onClick={handleClose} />
       </List>
     </div>
   );

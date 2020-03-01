@@ -35,8 +35,8 @@ export const TemplateListPage: React.FC = () => {
         renderHeader={() => (
           <>
             <TableCell>Name</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Name</TableCell>
+            <TableCell>Period</TableCell>
+            <TableCell>Business type</TableCell>
           </>
         )}
         renderRow={(template) => (
